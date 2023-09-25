@@ -67,10 +67,12 @@ exports.mail = async (req, res, next) => {
             from: `"MENTORING TEAM" <${process.env.EMAIL}`,
             to: newContact.email,
             subject: "Reply FROM COMPANY MENTORING ",
-            html: ` 
-            <p>Thank You  ${newContact.username} ${newContact.phone}</p> <br>
-            <p>for sending us Your message </p> <br>
-            <p>WE WILL REPLY TO YOU AS SOON AS WE CAN `
+            html: `<p>Information /<br>Name: ${newContact.username}<br>Email: ${newContact.email}<br>Phone: ${newContact.phone}</p>
+            <p>Project Details /<br>Description of project: ${newContact.projectDescription}<br>Competitors: ${newContact.composition}<br>Target group: ${newContact.targetGroup}<br>Vision: ${newContact.vision}<br>Competitive advantage: {}<br>Project status: ${newContact.projectStatus}<br>Business serves: ${newContact.business}<br>Project name chosen: ${newContact.projectOption}</p>
+            <p>Design Details /<br>- Business Name Suggestion: {{checkboxes}}<br>- Tagline Suggestion: {{formik.values.checkboxes[1]}}<br>- Logo Design: {{formik.values.checkboxes[2]}}<br>- Identity Elements Design:{{checkboxes}}<br>- Logo and Visual Identity Development:{{checkboxes[check5]}}<br>- Packaging Design:{{checkboxes[check6]}}<br>- Corporate Identity and Printed Materials Design: {{checkboxes[check7]}}<br>- Brand Identity Guidelines:{{checkboxes[check8]}}<br>- Print Company Profile Design: {{checkboxes[check9]}}<br>- Interactive Company Profile Design: {{checkboxes[check10]}}</p>
+            <p>Type of Logo design /<br>- Word Mark: {{typeLogo[0]}}<br>- Letter Mark: {{typeLogo[1]}}<br>- Pictorial Mark: {{typeLogo[2]}}<br>- Abstract Mark: {{typeLogo[3]}}<br>- Mascot Logo: {{typeLogo[4]}}<br>- Combination Mark: {{typeLogo[5]}}<br>- Emblem Logo: {{typeLogo[6]}}</p>
+            <p>Preferred style: ${newContact.pattern}</p>
+            <p>Notes /<br> ${newContact.notes}</p>`
         }
 
         transporter.sendMail(mailOptions, (error, info) => {
