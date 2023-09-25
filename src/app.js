@@ -15,20 +15,8 @@ app.use(
     })
 );
 
-// ... Your other routes and middleware ...
 
 // Start your server
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-});
-
-
-
-
-
-
-
-
-app.listen(port, () => {
-    console.log("This Application is running On Localhost  " + port);
 });
