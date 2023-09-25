@@ -7,9 +7,7 @@ const port = process.env.PORT || 5000;
 require("../db/db");
 
 app.use("/api/email", emailRouter);
-app.use(cors({
-    origin: "http://localhost:3000"
-}))
+app.use(cors())
 
 
 // Start your server
