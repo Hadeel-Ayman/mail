@@ -94,7 +94,6 @@ exports.mail = async (req, res, next) => {
         res.status(201).json({
             success: true,
             newContact: req.body,
-
         })
 
     } catch (error) {
