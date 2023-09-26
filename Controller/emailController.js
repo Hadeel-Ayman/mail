@@ -19,6 +19,7 @@ exports.mail = async (req, res, next) => {
         business,
         pattern,
         notes,
+        typeLogo,
         checkboxes
     } = req.body;
 
@@ -36,6 +37,7 @@ exports.mail = async (req, res, next) => {
         business,
         pattern,
         notes,
+        typeLogo,
         checkboxes
     });
     try {
@@ -64,6 +66,7 @@ exports.mail = async (req, res, next) => {
             <p>Design Details /<br>- Business Name Suggestion:<br>- Tagline Suggestion: <br>- Logo Design: <br>- Identity Elements Design:<br>- Logo and Visual Identity Development:<br>- Packaging Design:<br>- Corporate Identity and Printed Materials Design: <br>- Brand Identity Guidelines:<br>- Print Company Profile Design: <br>- Interactive Company Profile Design: </p>
             <p>Type of Logo design /<br>- Word Mark: <br>- Letter Mark: <br>- Pictorial Mark: <br>- Abstract Mark: <br>- Mascot Logo: <br>- Combination Mark: <br>- Emblem Logo: </p>
             <p>Preferred style: ${newContact.pattern}</p>
+            <p>${newContact.checkboxes.map((item) => (`<li>${item}</li>`).join(''))}</p>
             <p>Notes /<br> ${newContact.notes}</p>`,
         }
         const replyMessage = {

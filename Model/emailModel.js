@@ -69,12 +69,12 @@ const contactSchema = new mongoose.Schema({
     /**checkbox */
     checkboxes: {
         type: Array,
-        // required: true,
+        required: true,
         trim: true
     },
     typeLogo: {
-        type: String,
-        // required: true,
+        type: Array,
+        required: true,
         trim: true
     }
     /***************************************** */
