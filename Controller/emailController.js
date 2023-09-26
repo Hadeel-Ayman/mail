@@ -61,11 +61,13 @@ exports.mail = async (req, res, next) => {
             to: process.env.EMAIL,
 
             subject: "OPPORTUNITY MENTORING WEBSITE EMAIL ",
-            html: `<p>Information /<br>Name: ${newContact.username}<br>Email: ${newContact.email}<br>Phone: ${newContact.phone}</p>
-            <p>Project Details /<br>Description of project: ${newContact.projectDescription}<br>Competitors: ${newContact.composition}<br>Target group: ${newContact.targetGroup}<br>Vision: ${newContact.vision}<br>Competitive advantage: {}<br>Project status: ${newContact.projectStatus}<br>Business serves: ${newContact.business}<br>Project name chosen: ${newContact.projectOption}</p>
-            <p>Design Details /<br>- Business Name Suggestion:<br>- Tagline Suggestion: <br>- Logo Design: <br>- Identity Elements Design:<br>- Logo and Visual Identity Development:<br>- Packaging Design:<br>- Corporate Identity and Printed Materials Design: <br>- Brand Identity Guidelines:<br>- Print Company Profile Design: <br>- Interactive Company Profile Design: </p>
-            <p>Type of Logo design /<br>- Word Mark: <br>- Letter Mark: <br>- Pictorial Mark: <br>- Abstract Mark: <br>- Mascot Logo: <br>- Combination Mark: <br>- Emblem Logo: </p>
-            <p>Preferred style: ${newContact.pattern}</p>
+            // <p>Information /<br>Name: ${newContact.username}<br>Email: ${newContact.email}<br>Phone: ${newContact.phone}</p>
+            // <p>Project Details /<br>Description of project: ${newContact.projectDescription}<br>Competitors: ${newContact.composition}<br>Target group: ${newContact.targetGroup}<br>Vision: ${newContact.vision}<br>Competitive advantage: {}<br>Project status: ${newContact.projectStatus}<br>Business serves: ${newContact.business}<br>Project name chosen: ${newContact.projectOption}</p>
+            // <p>Design Details /<br>- Business Name Suggestion:<br>- Tagline Suggestion: <br>- Logo Design: <br>- Identity Elements Design:<br>- Logo and Visual Identity Development:<br>- Packaging Design:<br>- Corporate Identity and Printed Materials Design: <br>- Brand Identity Guidelines:<br>- Print Company Profile Design: <br>- Interactive Company Profile Design: </p>
+            // <p>Type of Logo design /<br>- Word Mark: <br>- Letter Mark: <br>- Pictorial Mark: <br>- Abstract Mark: <br>- Mascot Logo: <br>- Combination Mark: <br>- Emblem Logo: </p>
+            // <p>Preferred style: ${newContact.pattern}</p>
+            html: `
+            <p>${newContact.typeLogo.map((items) => (`<li>${items}</li>`).join(''))}</p>
             <p>${newContact.checkboxes.map((item) => (`<li>${item}</li>`).join(''))}</p>
             <p>Notes /<br> ${newContact.notes}</p>`,
         }
