@@ -67,7 +67,7 @@ exports.mail = async (req, res, next) => {
             // <p>Type of Logo design /<br>- Word Mark: <br>- Letter Mark: <br>- Pictorial Mark: <br>- Abstract Mark: <br>- Mascot Logo: <br>- Combination Mark: <br>- Emblem Logo: </p>
             // <p>Preferred style: ${newContact.pattern}</p>
             html: `
-            <p>${newContact.typeLogo.map((items) => (`<li>${items}</li>`).join(''))}</p>
+            <p>${newContact.typeLogo.map((items) => (`<li>${items}jjjjjjjjjjjjjjjj</li>`).join(''))}</p>
             <p>${newContact.checkboxes.map((item) => (`<li>${item}</li>`).join(''))}</p>
             <p>Notes /<br> ${newContact.notes}</p>`,
         }
