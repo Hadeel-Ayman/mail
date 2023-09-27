@@ -57,7 +57,8 @@ exports.mail = async (req, res, next) => {
         })
 
         let mailOptions = {
-            from: `"${newContact.email}" <${newContact.username}>`, // sender address  ,
+            // from: `"${newContact.email}" <${newContact.username}>`, // sender address  ,
+            from: `"${newContact.username}" <${newContact.email}>`, // استخدم البريد الإلكتروني واسم المرسل من العميل هنا
             to: process.env.EMAIL,
             subject: "NEW EMAIL MESSAGE",
             html: `
